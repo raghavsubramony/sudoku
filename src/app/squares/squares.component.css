@@ -1,0 +1,19 @@
+span { display: inline-block; }
+      #columns {
+        height: 35px;
+        width: 35px;
+        border:1px solid;
+        border-color: grey;
+      }
+      #columns:first-child {
+        border-left:solid;
+      }
+      #columns:nth-child(3n) {
+        border-right:solid ;
+      }
+      #rows:first-child {
+        border-top:solid;
+      }
+      #rows:nth-child(3n) #columns {
+        border-bottom:solid;
+      }
