@@ -219,4 +219,11 @@ export class SolverService {
     this.checks = 0;
     this.backtracks = 0;
   }
+
+  possibilities(row_id, column_id) {
+		row_id = row_id - 1;
+		column_id = column_id - 1;
+  }
+
+  
 }

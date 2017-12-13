@@ -1,2 +1,16 @@
 
- 
+       <input [(ngModel)]="rows" (change)="onRowChange()"/>
+       {{rows}}
+       <span>
+        <div *ngFor="let row of board">
+          <input
+            *ngFor="let square of row"
+            id="columns"
+            type="text"
+            value={{square}}
+            maxlength=1
+            />
+        </div>
+      </span>
+
+      

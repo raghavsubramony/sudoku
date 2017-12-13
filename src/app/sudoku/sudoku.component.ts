@@ -24,29 +24,10 @@ export class SudokuComponent {
       [0, 1, 0,  0, 7, 0,  0, 0, 0],
       [0, 0, 2,  0, 0, 0,  0, 0, 6]
   ];
-  resultBoard = [
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
+sudokuPuzzle = "070920405,000007806,450600000,005002009,040305002,030076000,069000004,000000000,000030900";
 
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
-
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
-      [0, 0, 0,  0, 0, 0,  0, 0, 0],
-      [0, 0, 0,  0, 0, 0,  0, 0, 0]
-  ];
-
-  onSolveClick(): void {
-    this.resultBoard = this.solver.solve(this.unsolvedBoard); //SolverService
-  }
-  onResetClick(): void {
-    this.resultBoard = Array(9).fill(Array(9).fill(0));
-  }
-  onPopulateClick(sudokuPuzzle: string): void {
-    let board = sudokuPuzzle
-      .split(',')
+generate(sudokuPuzzle:string): void{
+  let board = this.sudokuPuzzle.split(',')
       .map((rows) => {
         return rows.split('').map((value) => parseInt(value));
       });
@@ -59,7 +40,13 @@ export class SudokuComponent {
       console.log('Invalid board input');
     }
   }
-}
+  onSolveClick(): void {
+    this.unsolvedBoard = this.solver.solve(this.unsolvedBoard); 
+  }
+  onResetClick(): void {
+    this.unsolvedBoard = Array(9).fill(Array(9).fill(0));
+  }
+ }
 
 
 

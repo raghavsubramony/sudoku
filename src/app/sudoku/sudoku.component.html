@@ -1,7 +1,11 @@
-<div align="center">
+<div class="container-fluid" align="center" style="padding-top: 20px;">
       <app-squares [board]="unsolvedBoard"></app-squares>
+ </div>
+     <div align="center" style="padding-top: 20px;">
+      <input (click)=generate() type="button" value="Generate" />
       <input (click)=onSolveClick() type="button" value="Solve" />
       <input (click)=onResetClick() type="button" value="Reset" />
-      <app-squares [board]="resultBoard"></app-squares> 
-</div>
+     </div>
+      
+
     
